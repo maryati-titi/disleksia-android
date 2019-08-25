@@ -89,37 +89,34 @@ public class RegisterActivity extends AppCompatActivity {
         sqliteHelper = new DatabaseHelper(this);
         initTextViewLogin();
         initViews();
-        buttonRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (validate()) {
+        buttonRegister.setOnClickListener(view -> {
+            if (validate()) {
 
-                    int selectedIdJK = radioJK.getCheckedRadioButtonId();
+                int selectedIdJK = radioJK.getCheckedRadioButtonId();
 
-                    //find the radiobutton by returened id
-                    mRadioButton = findViewById(selectedIdJK);
+                //find the radiobutton by returned id
+                mRadioButton = findViewById(selectedIdJK);
 
-                    String Name = editTextName.getText().toString();
-                    String JK = mRadioButton.getText().toString();
-                    String TL = editTextTL.getText().toString();
-                    String UserName = editTextUserName.getText().toString();
-                    String Email = editTextEmail.getText().toString();
-                    String Password = editTextPassword.getText().toString();
-                    //Check in the database is there any user associated with  this email
-                    if (!sqliteHelper.isEmailExists(Email)) {
-                        //Email does not exist now add new user to database
-                        sqliteHelper.addUser(new User(null, Name, JK, TL, UserName, Email, Password));
-                        Snackbar.make(buttonRegister, "User created successfully! Please Login ", Snackbar.LENGTH_LONG).show();
-                        new Handler().postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                finish();
-                            }
-                        }, Snackbar.LENGTH_LONG);
-                    } else {
-                        //Email exists with email input provided so show error user already exist
-                        Snackbar.make(buttonRegister, "User already exists with same email ", Snackbar.LENGTH_LONG).show();
-                    }
+                String Name = editTextName.getText().toString();
+                String JK = mRadioButton.getText().toString();
+                String TL = editTextTL.getText().toString();
+                String UserName = editTextUserName.getText().toString();
+                String Email = editTextEmail.getText().toString();
+                String Password = editTextPassword.getText().toString();
+                //Check in the database is there any user associated with  this email
+                if (!sqliteHelper.isEmailExists(Email)) {
+                    //Email does not exist now add new user to database
+                    sqliteHelper.addUser(new User(null, Name, JK, TL, UserName, Email, Password));
+                    Snackbar.make(buttonRegister, "User created successfully! Please Login ", Snackbar.LENGTH_LONG).show();
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            finish();
+                        }
+                    }, Snackbar.LENGTH_LONG);
+                } else {
+                    //Email exists with email input provided so show error user already exist
+                    Snackbar.make(buttonRegister, "User already exists with same email ", Snackbar.LENGTH_LONG).show();
                 }
             }
         });
@@ -173,7 +170,6 @@ public class RegisterActivity extends AppCompatActivity {
             valid = false;
             textInputName.setError("Tolong diisi nama!");
         }
-
 
 
         //Handling validation for TL field
