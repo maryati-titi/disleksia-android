@@ -1,26 +1,23 @@
 package dyslexia.titi.frag27;
 
-import androidx.test.ext.junit.runners.AndroidJUnit4;
-import androidx.test.rule.ActivityTestRule;
+import android.content.Context;
 
-import org.junit.Rule;
+import androidx.test.InstrumentationRegistry;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
+import androidx.test.filters.LargeTest;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import static androidx.test.espresso.Espresso.onView;
-import static androidx.test.espresso.action.ViewActions.click;
-import static androidx.test.espresso.matcher.ViewMatchers.withId;
-// Created by Arif Ikhsanudin on 9/2/2019.
+import static org.junit.Assert.*;
 
 @RunWith(AndroidJUnit4.class)
+@LargeTest
 public class MainActivityTest {
 
-    @Rule
-    public ActivityTestRule<MainActivity> activityRule =
-            new ActivityTestRule<>(MainActivity.class);
-
     @Test
-    public void ensureIntentRegisterWork() {
-        onView(withId(R.id.btnRegister)).perform(click());
+    public void useAppContext() {
+        Context appContext = InstrumentationRegistry.getTargetContext();
+        assertEquals("dyslexia.titi.frag27", appContext.getPackageName());
     }
 }
