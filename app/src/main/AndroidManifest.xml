@@ -5,39 +5,60 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".permainan.kuis.ScoreActivity"
-            android:theme="@style/noTitleBar"></activity>
-        <activity android:name=".permainan.kuis.kataSifat.GameKataSifatActivity"
-            android:theme="@style/noTitleBar"/>
-        <activity android:name=".permainan.kuis.kataKeterangan.GameKataKeteranganActivity"
-            android:theme="@style/noTitleBar"/>
-        <activity android:name=".permainan.kuis.kataKerja.GameKataKerjaActivity"
-            android:theme="@style/noTitleBar"/>
-        <activity android:name=".permainan.kuis.simbolAngka.GameSimbolAngkaActivity"
-            android:theme="@style/noTitleBar"/>
-        <activity android:name=".permainan.kuis.kataBenda.GameKataBendaActivity"
-            android:theme="@style/noTitleBar"/>
+
+        <activity
+            android:name=".permainan.kuis.ScoreActivity"
+            android:theme="@style/noTitleBar" />
+        <activity
+            android:name=".permainan.kuis.kataSifat.GameKataSifatActivity"
+            android:theme="@style/noTitleBar" />
+        <activity
+            android:name=".permainan.kuis.kataKeterangan.GameKataKeteranganActivity"
+            android:theme="@style/noTitleBar" />
+        <activity
+            android:name=".permainan.kuis.kataKerja.GameKataKerjaActivity"
+            android:theme="@style/noTitleBar" />
+        <activity
+            android:name=".permainan.kuis.simbolAngka.GameSimbolAngkaActivity"
+            android:theme="@style/noTitleBar" />
+        <activity
+            android:name=".permainan.kuis.kataBenda.GameKataBendaActivity"
+            android:theme="@style/noTitleBar" />
         <activity
             android:name=".permainan.susunAlfabet.LowercaseActivity"
             android:label="Menyusun Abjad"
             android:parentActivityName=".permainan.PermainanActivity"
             android:theme="@style/GameAbjad" />
-        <activity android:name=".permainan.kuis.KuisActivity"
-            android:theme="@style/MenuKuis"
-            android:label="Menu Kuis"/>
+        <activity
+            android:name=".permainan.kuis.KuisActivity"
+            android:label="Menu Kuis"
+            android:theme="@style/MenuKuis" />
         <activity
             android:name=".permainan.susunAlfabet.SusunAlfabet"
             android:label="Menyusun Abjad"
             android:parentActivityName=".permainan.PermainanActivity"
             android:theme="@style/GameAbjad" />
-        <activity android:name=".bantuan.BantuanActivity" />
-        <activity android:name=".setting.SettingActivity" />
+        <activity
+            android:name=".bantuan.BantuanActivity"
+            android:label="Bantuan"
+            android:parentActivityName=".MenuActivity"
+            android:theme="@style/Bantuan" />
+
+        <activity android:name=".tentang.TentangActivity"
+            android:label="Tentang"
+            android:parentActivityName=".MenuActivity"
+            android:theme="@style/Tentang"/>
+
+        <activity android:name=".setting.SettingActivity"
+            android:label="Pengaturan"
+            android:parentActivityName=".MenuActivity"
+            android:theme="@style/Setting"/>
         <activity
             android:name=".perbaikanKata.PerbaikanKataActivity"
             android:label="Perbaikan Kata"
