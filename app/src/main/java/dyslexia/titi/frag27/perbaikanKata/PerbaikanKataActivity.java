@@ -72,8 +72,6 @@ public class PerbaikanKataActivity extends BaseActivity {
         loadMenu();
     }
 
-
-
     public void loadDatabase() {
         databaseAdapter = new DatabaseAdapter(getApplicationContext());
         kamusList = databaseAdapter.retrieveKamus("all");
@@ -81,6 +79,8 @@ public class PerbaikanKataActivity extends BaseActivity {
 
     public void search() {
         inputWord = ed_kataAwal.getText().toString().trim();
+        String found;
+        new Resolver(inputWord);
         String wordMatch = "";
         for (Kamus kamus : kamusList) {
             if (inputWord.equals(kamus.getWord())) {
@@ -160,7 +160,7 @@ public class PerbaikanKataActivity extends BaseActivity {
     }
 
     private void loadSuara() {
-       textToSpeech();
+        textToSpeech();
         listViewSimiliarWords.setOnItemClickListener((AdapterView<?> adapterView, View view, int position, long l) -> {
             String selectedItem = String.valueOf(adapterView.getItemAtPosition(position));
             Toast.makeText(getApplicationContext(), "" + selectedItem, Toast.LENGTH_LONG).show();
@@ -170,7 +170,7 @@ public class PerbaikanKataActivity extends BaseActivity {
     }
 
     private void loadSuara2() {
-       textToSpeech();
+        textToSpeech();
         iv_suara.setOnClickListener(view -> {
             String toSpeak = ed_kataAwal.getText().toString().trim();
             Toast.makeText(getApplicationContext(), toSpeak, Toast.LENGTH_LONG).show();
@@ -188,7 +188,7 @@ public class PerbaikanKataActivity extends BaseActivity {
         });
     }
 
-    private  void textToSpeech(){
+    private void textToSpeech() {
         textToSpeech = new TextToSpeech(getApplicationContext(), status -> {
             if (status != TextToSpeech.ERROR) {
                 textToSpeech.setLanguage(new Locale("id", "ID"));
