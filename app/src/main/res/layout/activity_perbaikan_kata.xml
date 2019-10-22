@@ -4,53 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="15dp"
-    android:layout_marginRight="15dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
     android:background="#edf5e1"
     android:orientation="vertical"
-    tools:context=".perbaikanKata.PerbaikanKataActivity">
+    tools:context=".ui.perbaikanKata.WordRepairActivity">
 
     <EditText
         android:id="@+id/ed_kataAwal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:gravity="center"
-        android:hint="Masukkan teks disini"
+        android:hint="Masukkan kata disini"
         android:inputType="textPersonName"
-        android:paddingTop="80dp"
+        android:paddingTop="30dp"
         android:textColor="#455d29"
         android:textSize="28sp" />
 
-    <Button
-        android:id="@+id/btnProsesKata"
-        style="@style/ButtonStyle1"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/btn_round3"
-        android:text="@string/cek_kata"
-        android:textColor="#fff" />
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btnProsesKata"
+            style="@style/ButtonStyle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="7"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/btn_round3"
+            android:text="@string/cek_kata"
+            android:textColor="#fff" />
+
+        <ImageView
+            android:id="@+id/iv_suara"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            app:srcCompat="@drawable/volume" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/tv_hasil"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="10dp"
+        android:layout_margin="5dp"
         android:gravity="center_horizontal"
-        android:lines="3"
+        android:text=" "
         android:textColor="#455d29"
-        android:textSize="28sp"
+        android:textSize="23sp"
         android:textStyle="bold" />
 
-    <ImageView
-        android:id="@+id/iv_suara"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="5dp"
-        app:srcCompat="@drawable/volume" />
+
+    <ListView
+        android:id="@+id/lv_similar_words"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="20dp"
+        android:layout_height="wrap_content"/>
+
+
+
+
+
 
 </LinearLayout>
