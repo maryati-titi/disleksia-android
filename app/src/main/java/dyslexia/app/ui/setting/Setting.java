@@ -20,6 +20,15 @@ public class Setting extends AppCompatActivity {
         Button btnLogout = findViewById(R.id.btn_logout);
         Button btnProfil = findViewById(R.id.btn_profil);
 
+//        Button btnLogout = findViewById(R.id.btn_logout);
+//        Button btnProfil = findViewById(R.id.btn_profil);
+//
+//        Button btnLogout = findViewById(R.id.btn_logout);
+//        Button btnProfil = findViewById(R.id.btn_profil);
+//
+//        Button btnLogout = findViewById(R.id.btn_logout);
+//        Button btnProfil = findViewById(R.id.btn_profil);
+
 
         btnProfil.setOnClickListener(view -> {
             startActivity(new Intent(this, ProfilActivity.class));
