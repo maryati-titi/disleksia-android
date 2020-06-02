@@ -4,7 +4,10 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
-//penyimpanan sementara
+/*
+Shared preferences merupakan salah satu opsi penyimpanan sederhana
+*/
+
 public class SharedPreferenceRepository {
     private static SharedPreferences sharedPreferences;
 
