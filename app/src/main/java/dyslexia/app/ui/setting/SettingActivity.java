@@ -29,6 +29,15 @@ public class SettingActivity extends AppCompatActivity {
             AuthService.logout(this);
             startActivity(new Intent(this, MainActivity.class));
         });
+
+//        btnLogout.setOnClickListener(view -> {
+//            AuthService.logout(this);
+//            startActivity(new Intent(this, MainActivity.class));
+//        });
+        btnLogout.setOnClickListener(view -> {
+            AuthService.logout(this);
+            startActivity(new Intent(this, MainActivity.class));
+        });
  }
 
     @Override
