@@ -17,20 +17,22 @@ public class PermainanActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_permainan);
 
-        CardView alfabet = findViewById(R.id.susunabjad);
-        alfabet.setOnClickListener(view -> {
-            startActivity(new Intent(PermainanActivity.this, UppercaseActivity.class));
+        CardView speech = findViewById(R.id.speechAlphabet);
+        speech.setOnClickListener(view -> {
+            startActivity(new Intent(PermainanActivity.this, AlphabetSpeechActivity.class));
         });
 
         CardView kuis = findViewById(R.id.kuis);
         kuis.setOnClickListener(view -> {
             startActivity(new Intent(PermainanActivity.this, KuisActivity.class));
         });
+        
 
-        CardView speech = findViewById(R.id.speechAlphabet);
-        speech.setOnClickListener(view -> {
-            startActivity(new Intent(PermainanActivity.this, AlphabetSpeechActivity.class));
+        CardView alfabet = findViewById(R.id.susunabjad);
+        alfabet.setOnClickListener(view -> {
+            startActivity(new Intent(PermainanActivity.this, UppercaseActivity.class));
         });
+
     }
 
     public void onBackPressed() {
