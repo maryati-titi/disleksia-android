@@ -26,7 +26,7 @@ public class PermainanActivity extends AppCompatActivity {
         kuis.setOnClickListener(view -> {
             startActivity(new Intent(PermainanActivity.this, KuisActivity.class));
         });
-        
+
 
         CardView alfabet = findViewById(R.id.susunabjad);
         alfabet.setOnClickListener(view -> {

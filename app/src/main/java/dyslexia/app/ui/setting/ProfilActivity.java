@@ -28,6 +28,10 @@ public class ProfilActivity extends AppCompatActivity {
 
         int selectedIdGender = gender.getCheckedRadioButtonId();
         RadioButton radioButtonGender = findViewById(selectedIdGender);
+//        CardView speech = findViewById(R.id.speechAlphabet);
+//        speech.setOnClickListener(view -> {
+//            startActivity(new Intent(PermainanActivity.this, AlphabetSpeechActivity.class));
+//        });
 
 //        RadioButton radioButton1 = findViewById(R.id.radioL);
 //        RadioButton radioButton2 = findViewById(R.id.radioP);
